@@ -1,0 +1,48 @@
+:root {
+  /* Core palette */
+  --bg: #0f1923;
+  --panel: rgba(255, 255, 255, 0.06);
+  --card: rgba(255, 255, 255, 0.08);
+  --bright: #f6c452;
+  --accent: #ff6b6b;
+  --mint: #5be5c0;
+  --text: #f7f7f5;
+  --muted: #c6c6c6;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  --surface: #ffffff;
+
+  /* Page + layout */
+  --page-bg: radial-gradient(1100px at 20% 20%, rgba(255, 107, 107, 0.18), transparent), radial-gradient(900px at 80% 0%, rgba(91, 229, 192, 0.18), transparent), linear-gradient(140deg, #0b1017, #131c28 60%, #0c1723);
+  --top-bg: rgba(255, 255, 255, 0.03);
+  --hero-overlay: radial-gradient(700px at 90% 90%, rgba(246, 196, 82, 0.14), transparent);
+
+  /* Text-specific accents */
+  --mark-text: #111;
+  --cta-text: #0b0f16;
+  --lede-text: #e5e6e8;
+  --button-primary-text: #111;
+  --badge-text: #f2f2f2;
+  --emph-text: #fff;
+  --pill-tag-text: #fce0a4;
+  --price-text: #fff;
+  --strong-text: #fff;
+  --tile-text: #f3f3f3;
+
+  /* Surfaces + effects */
+  --button-hover-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  --button-hover-bg: rgba(255, 255, 255, 0.08);
+  --badge-bg: rgba(255, 255, 255, 0.08);
+  --badge-border: var(--border);
+  --hero-card-glow: radial-gradient(closest-side, rgba(91, 229, 192, 0.3), transparent);
+  --card-sheen: linear-gradient(160deg, rgba(255, 255, 255, 0.05), transparent 30%);
+  --pill-tag-bg: rgba(246, 196, 82, 0.18);
+  --panel-bright-bg: linear-gradient(135deg, rgba(91, 229, 192, 0.12), rgba(246, 196, 82, 0.14));
+  --panel-bright-border: rgba(255, 255, 255, 0.16);
+  --hours-bg: rgba(255, 255, 255, 0.05);
+  --tile-bg: linear-gradient(135deg, rgba(255, 107, 107, 0.18), rgba(91, 229, 192, 0.16));
+  --tile-border: rgba(255, 255, 255, 0.14);
+  --steps-bg: rgba(255, 255, 255, 0.05);
+  --muted-pill-bg: rgba(255, 255, 255, 0.08);
+  --contact-bg: rgba(255, 255, 255, 0.04);
+}
