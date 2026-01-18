@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop stop-color="#ff6b6b" offset="0%"/>
+      <stop stop-color="#f6c452" offset="50%"/>
+      <stop stop-color="#5be5c0" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="32" fill="#0f1923"/>
+  <circle cx="160" cy="160" r="118" fill="none" stroke="url(#g)" stroke-width="10"/>
+  <circle cx="160" cy="160" r="106" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="3"/>
+  <text x="50%" y="140" text-anchor="middle" fill="#f7f7f5" font-family="Playfair Display, 'Times New Roman', serif" font-size="54" letter-spacing="-1">Jen’s</text>
+  <text x="50%" y="195" text-anchor="middle" fill="#f7f7f5" font-family="Manrope, 'Helvetica Neue', sans-serif" font-size="44" font-weight="700">Again</text>
+  <text x="50%" y="238" text-anchor="middle" fill="#c6c6c6" font-family="Manrope, 'Helvetica Neue', sans-serif" font-size="16" letter-spacing="2">JACKSONVILLE · FL</text>
+</svg>
