@@ -28,6 +28,7 @@
       <nav class="nav">
         <a href="#treats">Treats</a>
         <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
         <a href="#ordering">Ordering</a>
         <a class="cta" href="#contact">Call to order</a>
       </nav>
@@ -249,6 +250,70 @@
         </div>
       </section>
 
+      <section id="gallery" class="gallery">
+        <header class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h3>See what we’ve been baking</h3>
+          <p class="hint">Tap any photo to pop open the full-size bake.</p>
+        </header>
+        <div class="gallery-grid">
+          <a class="gallery-item" href="assets/gallery/image-1.jpg">
+            <img src="assets/gallery/image-1.thumb.jpg" alt="Assorted bakery treats 1" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-2.jpg">
+            <img src="assets/gallery/image-2.thumb.jpg" alt="Assorted bakery treats 2" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-3.jpg">
+            <img src="assets/gallery/image-3.thumb.jpg" alt="Assorted bakery treats 3" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-4.jpg">
+            <img src="assets/gallery/image-4.thumb.jpg" alt="Assorted bakery treats 4" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-5.jpg">
+            <img src="assets/gallery/image-5.thumb.jpg" alt="Assorted bakery treats 5" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-6.jpg">
+            <img src="assets/gallery/image-6.thumb.jpg" alt="Assorted bakery treats 6" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-7.jpg">
+            <img src="assets/gallery/image-7.thumb.jpg" alt="Assorted bakery treats 7" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-8.jpg">
+            <img src="assets/gallery/image-8.thumb.jpg" alt="Assorted bakery treats 8" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-9.jpg">
+            <img src="assets/gallery/image-9.thumb.jpg" alt="Assorted bakery treats 9" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-10.jpg">
+            <img src="assets/gallery/image-10.thumb.jpg" alt="Assorted bakery treats 10" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-11.jpg">
+            <img src="assets/gallery/image-11.thumb.jpg" alt="Assorted bakery treats 11" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-12.jpg">
+            <img src="assets/gallery/image-12.thumb.jpg" alt="Assorted bakery treats 12" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-13.jpg">
+            <img src="assets/gallery/image-13.thumb.jpg" alt="Assorted bakery treats 13" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-14.jpg">
+            <img src="assets/gallery/image-14.thumb.jpg" alt="Assorted bakery treats 14" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-15.jpg">
+            <img src="assets/gallery/image-15.thumb.jpg" alt="Assorted bakery treats 15" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-16.jpg">
+            <img src="assets/gallery/image-16.thumb.jpg" alt="Assorted bakery treats 16" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-17.jpg">
+            <img src="assets/gallery/image-17.thumb.jpg" alt="Assorted bakery treats 17" loading="lazy">
+          </a>
+          <a class="gallery-item" href="assets/gallery/image-18.jpg">
+            <img src="assets/gallery/image-18.thumb.jpg" alt="Assorted bakery treats 18" loading="lazy">
+          </a>
+        </div>
+      </section>
+
       <section id="contact" class="contact">
         <div>
           <p class="eyebrow">Call or Click</p>
@@ -284,6 +349,55 @@
       </div>
       <p class="hint">Fresh daily. Crafted with bright flavors and family love.</p>
     </footer>
+    <div class="lightbox" data-lightbox hidden>
+      <button class="lightbox-close" type="button" data-close aria-label="Close gallery">&times;</button>
+      <div class="lightbox-scrim" data-close></div>
+      <figure class="lightbox-body">
+        <img data-lightbox-img alt="">
+        <figcaption class="tiny">Tap Esc or click outside to close</figcaption>
+      </figure>
+    </div>
   </div>
+  <script>
+    const lightbox = document.querySelector("[data-lightbox]");
+    const lightboxImg = document.querySelector("[data-lightbox-img]");
+    const galleryLinks = document.querySelectorAll(".gallery-item");
+
+    if (lightbox && lightboxImg && galleryLinks.length) {
+      const openLightbox = (fullSrc, altText) => {
+        lightboxImg.src = fullSrc;
+        lightboxImg.alt = altText || "Full-size bakery photo";
+        lightbox.removeAttribute("hidden");
+        requestAnimationFrame(() => lightbox.classList.add("is-open"));
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        setTimeout(() => {
+          lightbox.setAttribute("hidden", "");
+          lightboxImg.src = "";
+        }, 160);
+      };
+
+      galleryLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const thumbImg = link.querySelector("img");
+          openLightbox(link.href, thumbImg ? thumbImg.alt : "");
+        });
+      });
+
+      lightbox.addEventListener("click", (event) => {
+        const shouldClose = event.target.dataset.close !== undefined || event.target === lightbox;
+        if (shouldClose) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !lightbox.hasAttribute("hidden")) {
+          closeLightbox();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
