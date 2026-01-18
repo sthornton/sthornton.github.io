@@ -14,7 +14,7 @@
 
   /* Page + layout */
   --page-bg: radial-gradient(1200px at 20% 20%, rgba(255, 159, 122, 0.18), transparent), radial-gradient(1000px at 80% 0%, rgba(115, 226, 190, 0.18), transparent), linear-gradient(135deg, #fff5ec, #fce9da 55%, #f5f7f3);
-  --top-bg: rgba(255, 255, 255, 0.94);
+  --top-bg: rgb(255 246 223);
   --hero-overlay: radial-gradient(700px at 90% 90%, rgba(255, 218, 117, 0.22), transparent);
 
   /* Text-specific accents */

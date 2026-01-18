@@ -25,10 +25,13 @@
           <h1>Fresh-Baked Treats</h1>
         </div>
       </div>
-      <nav class="nav">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
+        <span class="nav-toggle-icon"></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+      <nav class="nav" id="nav-links">
         <a href="#treats">Treats</a>
         <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
         <a href="#ordering">Ordering</a>
         <a class="cta" href="#contact">Call to order</a>
       </nav>
@@ -359,9 +362,31 @@
     </div>
   </div>
   <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const navLinks = document.getElementById("nav-links");
     const lightbox = document.querySelector("[data-lightbox]");
     const lightboxImg = document.querySelector("[data-lightbox-img]");
     const galleryLinks = document.querySelectorAll(".gallery-item");
+
+    if (navToggle && navLinks) {
+      const closeNav = () => {
+        navLinks.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      };
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => closeNav());
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeNav();
+      });
+    }
 
     if (lightbox && lightboxImg && galleryLinks.length) {
       const openLightbox = (fullSrc, altText) => {
