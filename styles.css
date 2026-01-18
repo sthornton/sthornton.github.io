@@ -138,6 +138,8 @@ a {
   gap: 26px;
   margin: 48px 0 40px;
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .hero::after {
@@ -240,6 +242,7 @@ a {
   background: radial-gradient(closest-side, rgba(91, 229, 192, 0.3), transparent);
   top: -60px;
   right: -40px;
+  pointer-events: none;
 }
 
 .hero-visual {
