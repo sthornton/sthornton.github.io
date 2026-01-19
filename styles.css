@@ -50,21 +50,30 @@ a {
   gap: 12px;
 }
 
-.logo-wrap {
-  width: 120px;
-  height: 120px;
-  padding: 10px;
-  border-radius: 12px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: grid;
-  place-items: center;
+.brand-title {
+  font-size: 38px;
+  line-height: 1.05;
 }
 
+.logo-wrap {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #0f7076; /* matches logo teal to avoid letterboxing */
+  flex-shrink: 0;
+}
+
+.logo-wrap picture,
 .logo-img {
+  border-radius: inherit;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 .mark {
@@ -184,10 +193,10 @@ a {
   pointer-events: none;
 }
 
-.hero-copy h2 {
-  font-size: 40px;
-  line-height: 1.12;
-  margin: 8px 0 24px;
+.hero-tagline {
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 4px 0 10px;
 }
 
 .lede {
@@ -618,20 +627,28 @@ a {
 .lightbox-body {
   margin: 0;
   max-width: min(1040px, 90vw);
+  max-height: 90vh;
   width: 100%;
   position: relative;
   background: var(--card);
   border-radius: 16px;
-  padding: 12px;
+  padding: 8px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  display: grid;
-  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .lightbox img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
+  object-fit: contain;
+  justify-self: center;
+  align-self: center;
   display: block;
   border-radius: 12px;
 }
@@ -755,7 +772,11 @@ a {
     align-items: flex-start;
   }
 
-  .hero-copy h2 {
-    font-size: 32px;
+  .hero-tagline {
+    font-size: 26px;
+  }
+
+  .brand-title {
+    font-size: 30px;
   }
 }
