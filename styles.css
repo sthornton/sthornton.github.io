@@ -277,6 +277,11 @@ a {
   overflow: hidden;
 }
 
+.hero-card.hero-card--zeroborder {
+  border: 0;
+  box-sizing: content-box !important;
+}
+
 .hero-card::before {
   content: "";
   position: absolute;
