@@ -37,22 +37,33 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 12px 18px;
+  padding: 16px 22px;
   background: rgb(254 252 243);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 30px;
   position: static;
+  box-shadow: 0 10px 30px rgba(28, 20, 10, 0.06);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  justify-items: center;
+  text-align: center;
 }
 
 .brand-title {
-  font-size: 38px;
-  line-height: 1.05;
+  font-size: 44px;
+  line-height: 0.95;
+  color: #2c1914;
+  white-space: nowrap;
 }
 
 .logo-wrap {
@@ -90,10 +101,48 @@ a {
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   font-size: 12px;
-  color: var(--mint);
+  color: #0f5d69;
   margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.eyebrow-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.eyebrow-location::before,
+.eyebrow-location::after {
+  content: "\2022";
+  color: #d39a74;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.brand-note {
+  margin-top: 4px;
+  color: #b47f59;
+  font-family: "Allura", "Brush Script MT", cursive;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-note::before,
+.brand-note::after {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: rgba(215, 183, 159, 0.7);
 }
 
 .nav {
@@ -124,22 +173,23 @@ a {
 .nav-toggle {
   display: none;
   align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--panel);
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid #e2c8b4;
+  background: #fffdf9;
   cursor: pointer;
   font-weight: 700;
+  box-shadow: 0 6px 20px rgba(45, 25, 18, 0.1);
 }
 
 .nav-toggle-icon {
   grid-column: 1;
-  width: 18px;
-  height: 2px;
+  width: 20px;
+  height: 3px;
   position: relative;
   display: block;
-  background: var(--text);
+  background: #2b1a15;
   border-radius: 3px;
 }
 
@@ -148,10 +198,10 @@ a {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: var(--text);
+  height: 3px;
+  background: #2b1a15;
   border-radius: 3px;
-  top: -5px;
+  top: -6px;
 }
 
 .nav-toggle-icon::after {
@@ -159,15 +209,18 @@ a {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: var(--text);
+  height: 3px;
+  background: #2b1a15;
   border-radius: 3px;
-  top: 5px;
+  top: 6px;
 }
 
 .nav-toggle-label {
-  font-size: 14px;
-  color: var(--text);
+  font-size: 16px;
+  color: #2b1a15;
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  line-height: 1;
+  font-weight: 700;
 }
 
 .lede {
@@ -423,12 +476,23 @@ a {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
+    padding: 14px 16px;
   }
 
   .nav-toggle {
     display: inline-flex;
     margin-left: auto;
+    flex-shrink: 0;
+    padding: 4px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .nav-toggle-label {
+    display: none;
   }
 
   .nav {
@@ -436,6 +500,8 @@ a {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    flex-basis: 100%;
+    order: 3;
     margin-left: auto;
     margin-top: 6px;
     padding: 10px;
@@ -452,6 +518,34 @@ a {
     width: 100%;
     border-color: var(--border);
   }
+
+  .brand {
+    min-width: 0;
+    flex: 1;
+    order: 1;
+  }
+
+  .nav-toggle {
+    order: 2;
+  }
+
+  .logo-wrap {
+    width: 100px;
+  }
+
+  .brand-title {
+    font-size: 32px;
+  }
+
+  .brand-note {
+    font-size: 19px;
+    gap: 6px;
+  }
+
+  .brand-note::before,
+  .brand-note::after {
+    width: 14px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -460,15 +554,36 @@ a {
   }
 
   .top {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 
   .nav-toggle {
-    align-self: flex-end;
+    padding: 2px;
+  }
+
+  .logo-wrap {
+    width: 88px;
   }
 
   .brand-title {
-    font-size: 30px;
+    font-size: 21px;
+  }
+
+  .eyebrow-location {
+    gap: 6px;
+    letter-spacing: 0.12em;
+    font-size: 10px;
+  }
+
+  .brand-note {
+    margin-top: 5px;
+    font-size: 16px;
+    gap: 5px;
+  }
+
+  .brand-note::before,
+  .brand-note::after {
+    width: 10px;
   }
 }
