@@ -373,6 +373,7 @@ a {
 
 .card-media {
   margin-top: 6px;
+  margin-bottom: 10px;
   aspect-ratio: 4 / 3;
 }
 
@@ -459,6 +460,14 @@ a {
 .price {
   color: var(--price-text);
   font-weight: 700;
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.price-divider {
+  height: 1px;
+  background: var(--border);
 }
 
 .split {
