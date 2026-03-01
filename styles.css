@@ -113,6 +113,7 @@ a {
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+  letter-spacing: 0.33em;
 }
 
 .eyebrow-location::before,
@@ -168,6 +169,7 @@ a {
   color: var(--cta-text);
   font-weight: 700;
   border-color: transparent;
+  text-align: center;
 }
 
 .nav-toggle {
@@ -469,6 +471,22 @@ a {
   gap: 12px;
   color: var(--muted);
   flex-wrap: wrap;
+}
+
+@media (min-width: 901px) {
+  .brand {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 14px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .brand-copy {
+    justify-self: center;
+    width: max-content;
+  }
 }
 
 @media (max-width: 900px) {
